@@ -23,5 +23,13 @@
     </span>
   </div>
 
+  <div class="field">
+    <label for="address">ที่อยู่</label>
+    <input id="address" type="text" formControlName="address" />
+    <span class="error" *ngIf="userForm.get('address')?.invalid && userForm.get('address')?.touched">
+      กรุณากรอกที่อยู่
+    </span>
+  </div>
+
   <button type="submit">บันทึก</button>
 </form>

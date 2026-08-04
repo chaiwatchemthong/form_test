@@ -1,0 +1,27 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div class="field">
+    <label for="name">ชื่อ</label>
+    <input id="name" type="text" formControlName="name" />
+    <span class="error" *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched">
+      กรุณากรอกชื่อ (อย่างน้อย 2 ตัวอักษร)
+    </span>
+  </div>
+
+  <div class="field">
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email" />
+    <span class="error" *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+      กรุณากรอก Email ให้ถูกต้อง
+    </span>
+  </div>
+
+  <div class="field">
+    <label for="phone">เบอร์โทร</label>
+    <input id="phone" type="text" formControlName="phone" placeholder="0812345678" />
+    <span class="error" *ngIf="userForm.get('phone')?.invalid && userForm.get('phone')?.touched">
+      กรุณากรอกเบอร์โทร 10 หลัก ขึ้นต้นด้วย 0
+    </span>
+  </div>
+
+  <button type="submit">บันทึก</button>
+</form>

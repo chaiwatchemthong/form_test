@@ -31,7 +31,13 @@
     </span>
   </div>
 
-  
+   div class="field">
+    <label for="password">รหัสผ่าน</label>
+    <input id="password" type="password" formControlName="password" />
+    <span class="error" *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched">
+      กรุณากรอกรหัสผ่าน (อย่างน้อย 6 ตัวอักษร)
+    </span>
+  </div>
 
   <button type="submit">บันทึก</button>
 </form>
